@@ -6,8 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 
-// Le stéréotype @Configuration précise que cette classe servira de configuration.
+// Le stï¿½rï¿½otype @Configuration prï¿½cise que cette classe servira de configuration.
 @Configuration
 @ComponentScan({"dev.ihm","dev.service","dev.dao","dev"})
 @PropertySource("app.properties")
@@ -19,4 +20,6 @@ public class AppConfig {
 	public Scanner scanner(){
 		return  new Scanner (System.in);
 	}
+	
+
 }

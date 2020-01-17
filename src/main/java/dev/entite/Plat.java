@@ -2,9 +2,21 @@ package dev.entite;
 
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name="plat")
 public class Plat {
 
+	@Id
+	private int id;
+	@Column(name = "nom", length = 100)
     private String nom;
+	@Column(name = "prix", length = 11)
     private Integer prixEnCentimesEuros;
 
     public Plat() {
