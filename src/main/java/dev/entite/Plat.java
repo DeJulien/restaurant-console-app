@@ -4,19 +4,24 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Repository;
 
-@Entity
+
+@Entity 
 @Table(name="plat")
 public class Plat {
 
-	@Id
+	@Id 
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "nom", length = 100)
+	@Column(name = "nom")
     private String nom;
-	@Column(name = "prix", length = 11)
+	@Column(name = "prix")
     private Integer prixEnCentimesEuros;
 
     public Plat() {
@@ -31,7 +36,21 @@ public class Plat {
         return nom;
     }
 
-    public void setNom(String nom) {
+    /**Getter
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**Setter
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public void setNom(String nom) {
         this.nom = nom;
     }
 
